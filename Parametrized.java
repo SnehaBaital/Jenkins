@@ -4,9 +4,7 @@ public class Parametrized
 public static void main(String args[])  
 {  
 int x, y, sum;  
-Scanner sc = new Scanner(System.in);    
-x = sc.nextInt();   
-y = sc.nextInt();  
+Scanner sc = new Scanner(System.in);      
 sum = sum(x, y);  
 System.out.println("The sum of two numbers x and y is: " + sum);  
 }  
