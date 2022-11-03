@@ -5,3 +5,19 @@ RUN apt install nginx -y
 EXPOSE 80
 COPY index.html /var/www/html/index.html
 CMD ["nginx", "-g", "daemon off;"]
+
+docker build -t siesnginxservers .
+docker run -itd -p 8080:80 siesnginxservers
+
+
+For Apache server container
+docker run -itd -p 8080:80 --name chirag_web username/ubuntu_apache2:v1
+docker exec -it container-id service apache2 restart
+
+For Docker Volume
+docker volume create name_of_volumn
+docker volume list
+docker volume inspect name_of_volumn
+ls mountpoint path
+docker images
+docker run -it -p 8080:80 --mount source=name_of_volumn,target=/var/www/html/ username/ubuntu_apache2:v1 bash
